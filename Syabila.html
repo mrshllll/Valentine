@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syabila's Valentine Surprise</title>
+
+    <style>
+        body {
+            font-family: 'Playwrite AU SA', cursive;
+            background: url('Background.png') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Make the image cover the whole screen */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .message {
+            max-width: 90%; /* Fit nicely on mobile screens */
+            margin: 20px auto; /* Center the box */
+            background: rgba(255, 255, 255, 0.8); /* Transparent white background for readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            box-sizing: border-box;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image-frame {
+            margin: 0 10px; /* Space between the images */
+        }
+
+        .image-frame img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgb(62, 184, 255); /* Flower-like blue border */
+        }
+
+        .quote-box {
+            color: black; /* Black text for contrast */
+            padding: 15px;
+            border-radius: 10px; /* Rounded corners */
+            margin: 0 auto; /* Center the box */
+            width: 90%; /* Responsive width */
+            box-shadow: none; /* Remove the inner border-like shadow */
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding is included in the element's size */
+        }
+
+        .valentine-text {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        .surprise-btn {
+            background-color: #e6c92a; /* Gold button */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .surprise-btn:hover {
+            background-color: #ffcc00; /* Lighter gold on hover */
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Glowing effect */
+        }
+
+        .surprise-btn:active {
+            transform: scale(1); /* Button returns to normal size when clicked */
+        }
+    </style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA&display=swap" rel="stylesheet">
+
+<body>
+    <div class="message">
+        <h1>Happy Valentine's Day, Syabila!</h1>
+        
+        <!-- Two images on left and right -->
+        <div class="images-container">
+            <div class="image-frame">
+                <img src="SyabilaLeft.jpg" alt="Princess">
+            </div>
+            <div class="image-frame">
+                <img src="SyabilaRight.jpg" alt="Princess">
+            </div>
+        </div>
+
+        <!-- Quote box below the images -->
+        <div class="quote-box">
+            <p class="valentine-text">
+                You are the highlight of my life, that's why your name is Stabilo. 💖  
+                Every moment with you adds color to my world, and I can’t wait to paint more memories with you.
+            </p>
+        </div>
+    </div>
+
+    <!-- Surprise button -->
+    <button class="surprise-btn" onclick="window.location.href='gallery.html'">Press for Surprise</button>
+
+</body>
+</html>

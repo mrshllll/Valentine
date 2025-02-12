@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    
+    <style>
+        body {
+            font-family: 'Playwrite AU SA', cursive;
+            background: url('Background.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .valentine-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .valentine-btn:hover {
+            background-color: #ff85c2;
+        }
+
+        #no-btn {
+            position: relative;
+        }
+
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: #8ce1fd;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heart-grow 2s ease-out forwards;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: #8ce1fd;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            left: 0;
+            top: -50px;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes heart-grow {
+            0% { transform: scale(0); }
+            100% { transform: scale(10); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="valentine-proposal">
+        <p>Will you be my Valentine?</p>
+        <div class="button-container">
+            <button class="valentine-btn" onclick="acceptValentine()">Yes</button>
+            <button class="valentine-btn" id="no-btn" onclick="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <div id="loading-screen" style="display: none;">
+        <div class="heart"></div>
+    </div>
+
+    <script>
+        function acceptValentine() {
+            document.getElementById('valentine-proposal').style.display = 'none';
+            document.getElementById('loading-screen').style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = 'Syabila.html'; // Redirect to the next page
+            }, 2000);
+        }
+
+        function moveNoButton() {
+            let button = document.getElementById('no-btn');
+            let newX = Math.random() * (window.innerWidth - 150);
+            let newY = Math.random() * (window.innerHeight - 50);
+            button.style.position = 'absolute';
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+        }
+    </script>
+</body>
+</html>
